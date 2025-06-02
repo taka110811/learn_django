@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from .models import Product
 
 class TopView(TemplateView):
@@ -13,3 +13,8 @@ class ProductListView(ListView):
 class ProductCreateView(CreateView):
     model = Product
     fields = '__all__'
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    fields = '__all__'
+    template_name_suffix = '_update_form'
