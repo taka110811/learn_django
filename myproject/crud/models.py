@@ -10,6 +10,7 @@ class Category(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=200)
     price = models.PositiveIntegerField()
+    description = models.TextField(blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     img = models.ImageField(blank=True, default='noImage.png')
     
